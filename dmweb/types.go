@@ -28,6 +28,7 @@ type Tag struct {
 	EwonTagID   int     `json:"ewonTagId"`
 }
 
+// Tags ..
 type Tags []*Tag
 
 // Ewon defines an ewon object
@@ -75,8 +76,8 @@ type GetDataResponse struct {
 			EwonTagID   int    `json:"ewonTagId"`
 			History     []struct {
 				Date    time.Time `json:"date,omitempty"`
-				Quality string    `json:"quality,omitempty"`
 				Value   int       `json:"value"`
+				Quality string    `json:"quality,omitempty"`
 			} `json:"history"`
 		} `json:"tags"`
 		LastSynchroDate time.Time `json:"lastSynchroDate"`
@@ -106,6 +107,7 @@ type SyncResponse struct {
 				Date     time.Time `json:"date"`
 				DataType string    `json:"dataType"`
 				Value    float64   `json:"value"`
+				Quality  string    `json:"quality"`
 			} `json:"history"`
 		} `json:"tags"`
 		LastSynchroDate time.Time `json:"lastSynchroDate"`
